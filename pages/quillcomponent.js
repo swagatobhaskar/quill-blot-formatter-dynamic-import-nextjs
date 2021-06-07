@@ -42,6 +42,18 @@ const formats = [
   "video"
 ];
 
+const ReactQuillCustom = ({ value, onChange }) => (
+  <ReactQuill
+    modules={modules}
+    formats={formats}
+    theme="snow"
+    readOnly={false}
+    onChange={onChange}
+    value={value}
+  />
+);
+export default ReactQuillCustom;
+/*
 export default function ReactQuillCustom({ value, onChange }) {
   console.log("QuillCustom");
   return (
@@ -55,3 +67,4 @@ export default function ReactQuillCustom({ value, onChange }) {
     />
   );
 }
+*/

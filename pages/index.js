@@ -7,14 +7,14 @@ const QuillWrapper = dynamic(() => import("./quillcomponent"), {
 });
 
 export default function Home() {
-  const [delta, setDelta] = useState("");
+  const [delta, setDelta] = useState({
+    ops: [{ insert: "Write something here.. " }, { insert: "\n" }]
+  });
   const [dirtyInnerHTML, setDirtyInnerHTML] = useState("");
   const [text, setText] = useState("");
   const [length, setLength] = useState("");
   console.log(delta);
   console.log(JSON.stringify(delta));
-
-  //useEffect(() => {}, []);
 
   const handleTextChange = (content, delta, source, editor) => {
     setDelta(editor.getContents()); // the delta
